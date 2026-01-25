@@ -1,0 +1,12 @@
+{
+  "name": "@shared/config",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./eslint": "./eslint.config.ts"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.13"
+  }
+}
