@@ -18,6 +18,9 @@ coverage
 # Turbo
 .turbo
 
+# TanStack Router
+.tanstack
+
 # Vercel
 .vercel
 
