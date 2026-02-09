@@ -6,10 +6,30 @@ import { Alphabet } from "eslint-plugin-perfectionist/alphabet";
 
 export default defineConfig([
   {
-    files: ["src/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: { perfectionist, import: importPlugin },
+  },
+  {
+    files: ["src/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     rules: {
-      "import/no-duplicates": ["error", { "prefer-inline": true }],
+      ...perfectionist.configs["recommended-alphabetical"].rules,
+      "perfectionist/sort-switch-case": "off",
+      "perfectionist/sort-jsx-props": "off",
+      "perfectionist/sort-objects": [
+        "error",
+        {
+          type: "unsorted",
+          useConfigurationIf: {
+            objectType: "non-destructured",
+          },
+        },
+      ],
+      "perfectionist/sort-intersection-types": [
+        "error",
+        {
+          groups: ["named", "unknown"],
+        },
+      ],
       "perfectionist/sort-imports": [
         "error",
         {
@@ -24,11 +44,11 @@ export default defineConfig([
           ],
         },
       ],
+      "import/no-duplicates": ["error", { "prefer-inline": true }],
     },
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    plugins: { perfectionist },
     rules: {
       "perfectionist/sort-named-imports": [
         "error",
@@ -46,8 +66,15 @@ export default defineConfig([
   },
   {
     files: ["**/*.json"],
+    ignores: ["**/tsconfig.json", "**/tsconfig.*.json"],
     plugins: { json },
     language: "json/json",
+    extends: ["json/recommended"],
+  },
+  {
+    files: ["**/tsconfig.json", "**/tsconfig.*.json"],
+    plugins: { json },
+    language: "json/jsonc",
     extends: ["json/recommended"],
   },
 ]);
