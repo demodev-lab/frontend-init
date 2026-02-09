@@ -8,6 +8,10 @@ export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: { perfectionist, import: importPlugin },
+    rules: {
+      "eol-last": ["error", "always"],
+      "no-multiple-empty-lines": ["error", { max: 1, maxEOF: 1, maxBOF: 0 }],
+    },
   },
   {
     files: ["src/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
@@ -15,6 +19,12 @@ export default defineConfig([
       ...perfectionist.configs["recommended-alphabetical"].rules,
       "perfectionist/sort-switch-case": "off",
       "perfectionist/sort-jsx-props": "off",
+      "perfectionist/sort-exports": [
+        "error",
+        {
+          partitionByNewLine: true,
+        },
+      ],
       "perfectionist/sort-objects": [
         "error",
         {
