@@ -7,6 +7,10 @@
     "./eslint": "./eslint.config.ts"
   },
   "devDependencies": {
-    "@tsconfig/recommended": "^1.0.13"
+    "@eslint/json": "^0.14.0",
+    "@tsconfig/recommended": "^1.0.13",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-perfectionist": "^5.4.0",
+    "eslint-plugin-unused-imports": "^4.4.1"
   }
 }

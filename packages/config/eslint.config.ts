@@ -1,8 +1,9 @@
 import json from "@eslint/json";
 import importPlugin from "eslint-plugin-import";
 import perfectionist from "eslint-plugin-perfectionist";
-import { defineConfig } from "eslint/config";
+import unusedImports from "eslint-plugin-unused-imports";
 import { Alphabet } from "eslint-plugin-perfectionist/alphabet";
+import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
@@ -10,10 +11,11 @@ export default defineConfig([
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    plugins: { perfectionist, import: importPlugin },
+    plugins: { perfectionist, import: importPlugin, "unused-imports": unusedImports },
     rules: {
       "eol-last": ["error", "always"],
       "no-multiple-empty-lines": ["error", { max: 1, maxEOF: 1, maxBOF: 0 }],
+      "unused-imports/no-unused-imports": "error",
     },
   },
   {
