@@ -6,6 +6,9 @@ import { Alphabet } from "eslint-plugin-perfectionist/alphabet";
 
 export default defineConfig([
   {
+    ignores: ["**/*.gen.ts"],
+  },
+  {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: { perfectionist, import: importPlugin },
     rules: {
