@@ -7,7 +7,7 @@ type KyInstances = { auth: KyInstance; api: KyInstance; refresh: () => void };
 type RefreshOptions<T = string, M extends "get" | "post" = "get" | "post"> = {
   method: M;
   url: string;
-} & (M extends "post" ? { body: () => unknown } : { body: never }) &
+} & (M extends "post" ? { body?: () => unknown } : { body: never }) &
   (T extends string ? { getter?: (response: T) => string } : { getter: (response: T) => string });
 
 export function create<T = string>(
