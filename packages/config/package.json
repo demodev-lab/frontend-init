@@ -6,13 +6,15 @@
   "exports": {
     "./eslint": "./eslint.config.ts"
   },
-  "devDependencies": {
+  "dependencies": {
     "@eslint/json": "^0.14.0",
-    "@tsconfig/recommended": "^1.0.13",
-    "@types/node": "^22.15.21",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-perfectionist": "^5.4.0",
     "eslint-plugin-unused-imports": "^4.4.1",
     "typescript-eslint": "^8.46.4"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.13",
+    "@types/node": "^22.15.21"
   }
 }
