@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@swc/helpers": "^0.5.17",
     "@tanstack/router-devtools": "^1.159.4",
     "@tanstack/router-plugin": "^1.159.4",
     "@types/node": "^24.10.1",

@@ -4,10 +4,30 @@ import perfectionist from "eslint-plugin-perfectionist";
 import unusedImports from "eslint-plugin-unused-imports";
 import { Alphabet } from "eslint-plugin-perfectionist/alphabet";
 import { defineConfig } from "eslint/config";
+import tseslint from "typescript-eslint";
 
 export default defineConfig([
   {
     ignores: ["**/*.gen.ts"],
+  },
+  ...tseslint.configs.recommended,
+  {
+    files: ["**/*.{ts,mts,cts,tsx}"],
+    languageOptions: {
+      parserOptions: {
+        tsconfigRootDir: process.cwd(),
+      },
+    },
+    rules: {
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+    },
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
@@ -37,6 +57,19 @@ export default defineConfig([
           useConfigurationIf: {
             objectType: "non-destructured",
           },
+        },
+      ],
+      "perfectionist/sort-union-types": [
+        "error",
+        {
+          groups: ["unknown", "nullish"],
+        },
+      ],
+      "perfectionist/sort-object-types": [
+        "error",
+        {
+          type: "unsorted",
+          groups: ["unknown", "method"],
         },
       ],
       "perfectionist/sort-intersection-types": [
