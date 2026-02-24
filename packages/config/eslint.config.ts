@@ -6,6 +6,18 @@ import { Alphabet } from "eslint-plugin-perfectionist/alphabet";
 import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
+const sortOptions = {
+  type: "unsorted",
+  groups: ["unknown", "method", "callback"],
+  customGroups: [
+    {
+      type: "unsorted",
+      groupName: "callback",
+      elementNamePattern: "^on[A-Z]",
+    },
+  ],
+} as const;
+
 export default defineConfig([
   {
     ignores: ["**/*.gen.ts"],
@@ -43,11 +55,15 @@ export default defineConfig([
     rules: {
       ...perfectionist.configs["recommended-alphabetical"].rules,
       "perfectionist/sort-switch-case": "off",
+      "perfectionist/sort-classes": "off",
+      "perfectionist/sort-interfaces": ["error", sortOptions],
+      "perfectionist/sort-modules": "off",
       "perfectionist/sort-jsx-props": "off",
       "perfectionist/sort-exports": [
         "error",
         {
           partitionByNewLine: true,
+          groups: ["unknown", "type-export"],
         },
       ],
       "perfectionist/sort-objects": [
@@ -62,16 +78,11 @@ export default defineConfig([
       "perfectionist/sort-union-types": [
         "error",
         {
+          type: "unsorted",
           groups: ["unknown", "nullish"],
         },
       ],
-      "perfectionist/sort-object-types": [
-        "error",
-        {
-          type: "unsorted",
-          groups: ["unknown", "method"],
-        },
-      ],
+      "perfectionist/sort-object-types": ["error", sortOptions],
       "perfectionist/sort-intersection-types": [
         "error",
         {
@@ -93,6 +104,7 @@ export default defineConfig([
         },
       ],
       "import/no-duplicates": ["error", { "prefer-inline": true }],
+      curly: ["error", "all"],
     },
   },
   {

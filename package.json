@@ -9,15 +9,22 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
     "storybook": "pnpm --filter storybook run storybook",
-    "build-storybook": "pnpm --filter storybook run build-storybook"
+    "build-storybook": "pnpm --filter storybook run build-storybook",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@shared/config": "workspace:^",
     "eslint": "^9.39.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "turbo": "^2.7.5",
     "typescript": "5.9.2"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}": "prettier --write",
+    "{apps,packages}/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,json}": "eslint --flag unstable_config_lookup_from_file --fix"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {
