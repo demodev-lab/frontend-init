@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@nijesmik/eslint-config':
-        specifier: ^0.1.0
-        version: 0.1.0(@typescript-eslint/eslint-plugin@8.50.0(@typescript-eslint/parser@8.50.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(@typescript-eslint/parser@8.50.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2)
+        specifier: ^0.1.1
+        version: 0.1.1(@typescript-eslint/eslint-plugin@8.50.0(@typescript-eslint/parser@8.50.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(@typescript-eslint/parser@8.50.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2)
       eslint:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
@@ -714,8 +714,8 @@ packages:
   '@neoconfetti/react@1.0.0':
     resolution: {integrity: sha512-klcSooChXXOzIm+SE5IISIAn3bYzYfPjbX7D7HoqZL84oAfgREeSg5vSIaSFH+DaGzzvImTyWe1OyrJ67vik4A==}
 
-  '@nijesmik/eslint-config@0.1.0':
-    resolution: {integrity: sha512-qWYRaYrbNbsoxRLsbbjaFY10zPW5tv1emUuW9GOScHAf8qSl75tONV/6cQM9GzReMtRB8LTWpF9v3emqOSf7iA==}
+  '@nijesmik/eslint-config@0.1.1':
+    resolution: {integrity: sha512-l1l4QeVtsSpVpUdoAwtnQuoa/ywvnFCwB/iNKzMmyeu7jLk/kz+/shdGogsBRu8Qgcg18VMY8Nnr0Fgj+3uRYg==}
     peerDependencies:
       eslint: '>=9.15.0'
 
@@ -4768,7 +4768,7 @@ snapshots:
 
   '@neoconfetti/react@1.0.0': {}
 
-  '@nijesmik/eslint-config@0.1.0(@typescript-eslint/eslint-plugin@8.50.0(@typescript-eslint/parser@8.50.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(@typescript-eslint/parser@8.50.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2)':
+  '@nijesmik/eslint-config@0.1.1(@typescript-eslint/eslint-plugin@8.50.0(@typescript-eslint/parser@8.50.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(@typescript-eslint/parser@8.50.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2)':
     dependencies:
       '@eslint/json': 0.14.0
       eslint: 9.39.1(jiti@2.6.1)
