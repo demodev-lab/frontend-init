@@ -1,3 +1,3 @@
-import baseConfig from "@shared/config/eslint";
+import baseConfig from "@nijesmik/eslint-config";
 
 export default baseConfig;

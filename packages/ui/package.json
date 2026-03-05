@@ -19,7 +19,6 @@
     "tailwindcss": "^4"
   },
   "devDependencies": {
-    "@shared/config": "workspace:*",
     "@stylistic/stylelint-plugin": "^5.0.1",
     "@tsconfig/create-react-app": "^2.0.10",
     "@types/react": "^19.2.5",
