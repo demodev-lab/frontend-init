@@ -8,8 +8,6 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "storybook": "pnpm --filter storybook run storybook",
-    "build-storybook": "pnpm --filter storybook run build-storybook",
     "prepare": "husky"
   },
   "devDependencies": {
