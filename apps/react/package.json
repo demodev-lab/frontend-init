@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@nijesmik/eslint-config": "^0.1.1",
     "@swc/helpers": "^0.5.17",
     "@tailwindcss/vite": "^4.2.2",
     "@tanstack/router-devtools": "^1.159.4",
