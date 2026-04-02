@@ -1,1 +1,2 @@
 pnpm exec turbo run lint-staged --filter='[HEAD^1]' --concurrency=1
+pnpm exec turbo run lint:fsd --filter='[HEAD^1]'
